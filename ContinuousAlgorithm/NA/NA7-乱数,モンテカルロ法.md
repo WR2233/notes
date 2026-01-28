@@ -59,8 +59,8 @@
     $X$が$p(x)$に従うなら、$0 \leq y \leq 1$の$y$に対して、
     $$
     \begin{aligned}
-      確率P[f(X)\leq y] &= P[X\leq f^{-1}(y)]\\
-      &= \int_{-\infty}^{f^{-1}(y)}p(t)dt \\
+      確率P[f(X)\leq y] &= P[X\leq f^{-1}(y)]\\\\
+      &= \int_{-\infty}^{f^{-1}(y)}p(t)dt \\\\
       &= y
     \end{aligned}
     $$
@@ -84,9 +84,9 @@
     矩形$[a, b]\times [0,c]$の中で、2D一様分布する(X,Y)を以下のようにして生成する
     $$
     \begin{aligned}
-      X &= a + U (b-a)\\
+      X &= a + U (b-a)\\\\\\\\
       Y &= cV
-    \end{aligned}\\
+    \end{aligned}\\\\\\\\
     ただし、U, Vは[0, 1)の一様分布
     $$
 
@@ -102,14 +102,14 @@
     $$
     $$
     \begin{aligned}
-      P(f(X)\leq Y) &= \frac 1 {c(b-a)} \int_a^b f(x) dx\\
+      P(f(X)\leq Y) &= \frac 1 {c(b-a)} \int_a^b f(x) dx\\\\
         &=\frac 1 {c(b-a)}
     \end{aligned}
     $$
     よって、
     $$
     \begin{aligned}
-    P(X\leq x | f(X) \leq Y) &= \frac {P(f(X)\leq Y かつ X \leq x)}{P(f(X)\leq Y)} \\
+    P(X\leq x | f(X) \leq Y) &= \frac {P(f(X)\leq Y かつ X \leq x)}{P(f(X)\leq Y)} \\\\
       &= \int_a^x f(t)dt \  (= CDF)
     \end{aligned}
     $$
@@ -129,16 +129,16 @@
     - 説明
       $$
       \begin{aligned}
-        P(X\leq x かつSq(x)U \leq p(X) ) &= P(X\leq x かつ U \leq \frac{p(X)} {Sq(x)} )\\
-        &= \int_{-\infty}^x q(t) \frac{p(t)} {Sq(x)} dt \\
+        P(X\leq x かつSq(x)U \leq p(X) ) &= P(X\leq x かつ U \leq \frac{p(X)} {Sq(x)} )\\\\
+        &= \int_{-\infty}^x q(t) \frac{p(t)} {Sq(x)} dt \\\\
         &= \frac 1 S \int_{-\infty}^x p(t)dt
-        \end{aligned}\\
+        \end{aligned}\\\\
         P(Sq(x)U \leq p(X))= \frac 1 S
       $$
       よって、
       $$
       \begin{aligned}
-        P(X\leq x | Sq(x)U \leq p(X) ) &= \frac {P(X\leq x かつSq(x)U \leq p(X) )}{P(Sq(x)U \leq p(X))}\\
+        P(X\leq x | Sq(x)U \leq p(X) ) &= \frac {P(X\leq x かつSq(x)U \leq p(X) )}{P(Sq(x)U \leq p(X))}\\\\
         &= \int_{-\infty}^x p(t)dt
       \end{aligned}
       $$
@@ -149,14 +149,14 @@
   $U_1$を[0, 1)の一様分布\
   $U_2$を(0, 1]の一様分布とする
   $$
-    X =\sqrt{-2\log {U_1}}\cos{(2\pi U_2)}\\
+    X =\sqrt{-2\log {U_1}}\cos{(2\pi U_2)}\\\\
     Y =\sqrt{-2\log {U_2}}\sin{(2\pi U_2)}
   $$
 
 - 説明
   $$
   \begin{aligned}
-    du_1du_2 &=\frac 1 {\sqrt{2\pi}} e^{-\frac {x^2} 2}\frac 1 {\sqrt{2\pi}} e^{-\frac {y^2} 2}dxdy\\
+    du_1du_2 &=\frac 1 {\sqrt{2\pi}} e^{-\frac {x^2} 2}\frac 1 {\sqrt{2\pi}} e^{-\frac {y^2} 2}dxdy\\\\
     &= \frac 1 {2\pi} e^{-\frac {r^2}2}rdrd\theta
   \end{aligned}
   $$
@@ -170,7 +170,7 @@
   $$
   よって、
   $$
-    CDF = \frac 1 2 \int_{-\infty}^x e^{-\frac {s}2}ds\\
+    CDF = \frac 1 2 \int_{-\infty}^x e^{-\frac {s}2}ds\\\\
       = e^{-x/2}
   $$
   すなわち、
@@ -193,13 +193,13 @@
   共分散行列$V$は正定値対称より、$V =LL^\top$ (コレスキー分解)\
   $\boldsymbol{y} = \boldsymbol{\mu} + L \boldsymbol{x} $として$\boldsymbol{y}$を決めると、
   $$
-    \boldsymbol{x} = L^{-1}(\boldsymbol{y} - \boldsymbol{\mu})\\
+    \boldsymbol{x} = L^{-1}(\boldsymbol{y} - \boldsymbol{\mu})\\\\
     d\boldsymbol{x} = L^{-1}\boldsymbol{y}
   $$
   これを使って、
   $$
-    \prod_i N(x_i)dx_i = \frac1{(2\pi)^{N/2}} e^{-\frac 1 2 \boldsymbol{x}^\top \boldsymbol{x}} \prod_i dx_i\\
-    = \frac1{(2\pi)^{N/2}} \exp{(-\frac 1 2 {(\boldsymbol{y} - \boldsymbol{\mu})}^\top L^{-1\top}L^{-1} {(\boldsymbol{y} - \boldsymbol{\mu})})} \det(L^{-1}) dy_1dy_2\dots dy_N \\
+    \prod_i N(x_i)dx_i = \frac1{(2\pi)^{N/2}} e^{-\frac 1 2 \boldsymbol{x}^\top \boldsymbol{x}} \prod_i dx_i\\\\
+    = \frac1{(2\pi)^{N/2}} \exp{(-\frac 1 2 {(\boldsymbol{y} - \boldsymbol{\mu})}^\top L^{-1\top}L^{-1} {(\boldsymbol{y} - \boldsymbol{\mu})})} \det(L^{-1}) dy_1dy_2\dots dy_N \\\\
     = \frac1{(2\pi)^{N/2}} \exp{(-\frac 1 2 {(\boldsymbol{y} - \boldsymbol{\mu})}^\top V^{-1}{(\boldsymbol{y} - \boldsymbol{\mu})})} (\det(V))^{-1/2} dy_1dy_2\dots dy_N
   $$
 
@@ -213,10 +213,10 @@
   とすると、$\int p(x) dx =1$であり、
   $$
   \begin{aligned}
-  E(I_N)&= E(\frac 1 N \sum_{i=1}^N f(X_i))\\ 
-        &= \int dx_1dx_2\dots dx_N \frac 1 N \sum_i (f(x_i)p(x_1)p(x_2)\dots p(x_N)) \\
-        &= \frac 1 N \sum_i \int dx_i f(x_i)p(x_i)\\
-        &= \int f(x)p(x)dx\\
+  E(I_N)&= E(\frac 1 N \sum_{i=1}^N f(X_i))\\\\ 
+        &= \int dx_1dx_2\dots dx_N \frac 1 N \sum_i (f(x_i)p(x_1)p(x_2)\dots p(x_N)) \\\\
+        &= \frac 1 N \sum_i \int dx_i f(x_i)p(x_i)\\\\
+        &= \int f(x)p(x)dx\\\\
   \end{aligned}
   $$
   従って、$I_N$によって積分$I=\int{ f(x)p(x)dx}$を近似できた\
@@ -224,23 +224,23 @@
   分散$V(I_N)$を考える
   $$  
   \begin{aligned}
-  V(I_N) &= E((\frac 1 N \sum_{i=1}^N f(X_i) - I)^2) \\
-         &= \frac 1 {N^2} E(\sum_{i,j} (f(X_i) - I)(f(X_j) - I)) \\
-         &= \frac 1 {N^2} \int dx_1dx_2\dots dx_N\sum_{i,j} (f(x_i) - I)(f(x_j) - I)p(x_1)p(x_2)\dots p(x_N)\\
+  V(I_N) &= E((\frac 1 N \sum_{i=1}^N f(X_i) - I)^2) \\\\
+         &= \frac 1 {N^2} E(\sum_{i,j} (f(X_i) - I)(f(X_j) - I)) \\\\
+         &= \frac 1 {N^2} \int dx_1dx_2\dots dx_N\sum_{i,j} (f(x_i) - I)(f(x_j) - I)p(x_1)p(x_2)\dots p(x_N)\\\\
   \end{aligned}
   $$
   ここで、$i\neq j$の時、
   $$  
   \begin{aligned}
-  &\int dx_1dx_2\dots dx_N (f(x_i) - I)(f(x_j) - I)p(x_1)p(x_2)\dots p(x_N)\\ 
-  = &\int dx_i (f(x_i) - I)p(x_i)dx_i \int dx_j (f(x_j) - I) p(x_j)dx_j\\
+  &\int dx_1dx_2\dots dx_N (f(x_i) - I)(f(x_j) - I)p(x_1)p(x_2)\dots p(x_N)\\\\ 
+  = &\int dx_i (f(x_i) - I)p(x_i)dx_i \int dx_j (f(x_j) - I) p(x_j)dx_j\\\\
   = &0
   \end{aligned}
   $$
   よって、
   $$
   \begin{aligned}
-  V(I_N) &=\frac 1 {N^2} \sum_i \int dx_i (f(x_i)-I)^2p(x_i)\\
+  V(I_N) &=\frac 1 {N^2} \sum_i \int dx_i (f(x_i)-I)^2p(x_i)\\\\
          &= \frac 1 N V[f(X)]
   \end{aligned}
   $$
